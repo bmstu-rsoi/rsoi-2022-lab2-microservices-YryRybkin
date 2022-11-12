@@ -29,10 +29,10 @@ jobs:
         run: mvn -f ./services/reservation_service/ReservationApplication/pom.xml -B clean package -DskipTests
         
       - name: Maven Package PaymentApplication
-        run: mvn -f ./services/loyalty_service/LoyaltyApplication/pom.xml -B clean package -DskipTests
+        run: mvn -f ./services/payment_service/PaymentApplication/pom.xml -B clean package -DskipTests
         
       - name: Maven Package LoyaltyApplication
-        run: mvn -f ./services/api_gateway/GatewayAPI/pom.xml -B clean package -DskipTests
+        run: mvn -f ./services/loyalty_service/LoyaltyApplication/pom.xml -B clean package -DskipTests
 
       - name: Build images
         timeout-minutes: 10

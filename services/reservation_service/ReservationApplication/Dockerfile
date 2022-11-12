@@ -1,8 +1,8 @@
 FROM openjdk:18 as builder
 WORKDIR application
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} application.jar
-RUN java -Djarmode=layertools -jar application.jar extract
+COPY ${JAR_FILE} reservation.jar
+RUN java -Djarmode=layertools -jar reservation.jar extract
 
 FROM openjdk:18
 ENV PORT=8070

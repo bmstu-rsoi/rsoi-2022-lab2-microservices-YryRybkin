@@ -14,7 +14,29 @@ services:
     ports:
       - "5432:5432"
 
-# TODO добавить сервисы
+    gateway:
+    image: gateway
+    build: ./services/api_gateway/GatewayAPI/
+    ports:
+      - "8080:8080"
+
+  reservation:
+    image: reservation
+    build: ./services/reservation_service/ReservationApplication/
+    ports:
+      - "8070:8070"
+
+  payment:
+    image: payment
+    build: ./services/payment_service/PaymentApplication/
+    ports:
+      - "8060:8060"
+
+  loyalty:
+    image: loyalty
+    build: ./services/loyalty_service/LoyaltyApplication/
+    ports:
+      - "8050:8050"
 
 volumes:
   db-data:

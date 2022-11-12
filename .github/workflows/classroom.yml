@@ -23,16 +23,16 @@ jobs:
           java-version: 1.17
           
       - name: Maven Package API Gateway
-        run: mvn -f ./services/api_gateway/GatewayAPI/pom.xml -B clean package
+        run: mvn -f ./services/api_gateway/GatewayAPI/pom.xml -B clean package -DskipTests
         
       - name: Maven Package ReservationApplication
-        run: mvn -f ./services/reservation_service/ReservationApplication/pom.xml -B clean package
+        run: mvn -f ./services/reservation_service/ReservationApplication/pom.xml -B clean package -DskipTests
         
       - name: Maven Package PaymentApplication
-        run: mvn -f ./services/loyalty_service/LoyaltyApplication/pom.xml -B clean package
+        run: mvn -f ./services/loyalty_service/LoyaltyApplication/pom.xml -B clean package -DskipTests
         
       - name: Maven Package LoyaltyApplication
-        run: mvn -f ./services/api_gateway/GatewayAPI/pom.xml -B clean package
+        run: mvn -f ./services/api_gateway/GatewayAPI/pom.xml -B clean package -DskipTests
 
       - name: Build images
         timeout-minutes: 10
